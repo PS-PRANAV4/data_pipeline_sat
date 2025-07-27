@@ -1,0 +1,9 @@
+validator_classes:
+  - app.validators.schema_validator.SchemaValidator
+
+schema:
+  sensor_id: string
+  timestamp: ISO datetime
+  reading_type: string 
+  value: float
+  battery_level: float
