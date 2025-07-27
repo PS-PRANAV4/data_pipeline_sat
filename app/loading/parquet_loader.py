@@ -18,10 +18,13 @@ class ParquetLoader(DataLoadingInterface):
 
     def load(self, destination, context):
         logger.info(f"started loading file {destination}")
+        if destination == None:
+            return None,None
         try:
             schema = duckdb.sql(f"DESCRIBE SELECT * FROM '{destination}'").df()
             logger.info(f"file {destination} schema loaded to duckdb")
             data_frame = duckdb.sql(f"SELECT * FROM '{destination}'").df()
+
             return (schema, data_frame)
         except Exception as e:
             logger.error(

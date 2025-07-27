@@ -1,0 +1,11 @@
+reading_type,pct_missing_values,pct_anomalous_readings,sensor_id_x,sensor_id_y,pct_time_gap_coverage
+humidity,0.0,23.076923076923077,,sensor_5,40.0
+humidity,0.0,23.076923076923077,,sensor_2,20.0
+humidity,0.0,23.076923076923077,,sensor_4,40.0
+humidity,0.0,23.076923076923077,,sensor_3,60.0
+humidity,0.0,23.076923076923077,,sensor_1,40.0
+temperature,0.0,0.0,,sensor_5,40.0
+temperature,0.0,0.0,,sensor_2,20.0
+temperature,0.0,0.0,,sensor_4,40.0
+temperature,0.0,0.0,,sensor_3,60.0
+temperature,0.0,0.0,,sensor_1,40.0

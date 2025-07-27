@@ -45,8 +45,17 @@ LOG_CONFIG = {
             "backupCount": 2,
             "encoding": "utf8",
         },
+        "derived_fields": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "formatter": "default",
+            "level": "INFO",
+            "filename": str(LOGS_DIR / "derived_logs.log"),
+            "maxBytes": 2 * 1024 * 1024,
+            "backupCount": 2,
+            "encoding": "utf8",
+        },
     },
-    "loggers": {},
+    "loggers": {"derived_fields": {"handlers": ["derived_fields"]}},
     "root": {"handlers": ["console", "pipeline_file"], "level": "DEBUG"},
 }
 

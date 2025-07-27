@@ -10,3 +10,22 @@ schema:
   battery_level: float
 ingestion_classes:
   - app.ingestion_metrics.ingestion_data.IngetionData
+
+transform_classes:
+  - app.data_trasnformation.cleaners.drop_duplicate.DropDublicate
+  - app.data_trasnformation.cleaners.drop_missing_row.DropMissing
+  - app.data_trasnformation.data_quality_checks.date_check.DateCheck
+  - app.data_trasnformation.derived_data.z_score.ZScore
+  - app.data_trasnformation.derived_data.caliibaration.Caliboration
+  - app.data_trasnformation.derived_data.anomalous_reading.AnomalousReading
+
+
+base_path:  data/processed
+partition_cols:
+  - date
+  - sensor_id
+compression:  snappy
+
+profile_path: data/profile/
+
+input_file_path: data/raw
