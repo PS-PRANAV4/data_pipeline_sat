@@ -13,8 +13,9 @@ if __name__ == "__main__":
     setup_logging()
     procesor_obj = (
         Processing(
-            destination="sample_sensor_data.parquet", context=processing_context_obj
+            destination="sample_sensor_data.parquet", context=processing_context_obj,
+            ingestion_destination="output.duckdb"
         )
         .load_data(LoaderClass=ParquetLoader)
-        .validator()
+        .validator().ingestion_metrics()
     )
