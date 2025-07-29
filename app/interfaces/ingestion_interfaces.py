@@ -25,3 +25,10 @@ class IngestionInterface(ABC):
     @abstractmethod
     def run_metrics(self, path_of_file):
         pass
+
+    def disconnect(self):
+        if self.conn:
+            self.conn.close()
+
+    def __del__(self):
+        self.disconnect()
