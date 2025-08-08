@@ -15,14 +15,9 @@ if __name__ == "__main__":
     setup_logging()
     with open("config.yml", "r") as f:
         config = yaml.safe_load(f)
-    last_line_path = Path("data/last_read/last_read.txt")
-    
-
     with open("data/last_read/last_read.txt", "rb") as f:
         f.seek(0, 2)  
         filesize = f.tell()
-
-        print(filesize)
         
         if filesize == 0:
             last_line = ""
