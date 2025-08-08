@@ -13576,3 +13576,623 @@ date
 2025-06-05  sensor_5  temperature        18.971429       18.971429
 2025-07-27 23:49:33,460 [INFO] app.core.processing - completed derived classes
 2025-07-27 23:49:33,474 [INFO] app.core.processing - saving data with partition
+2025-08-08 12:58:21,606 [INFO] app.core.processing - loading started
+2025-08-08 12:58:21,607 [INFO] app.loading.parquet_loader - checking can we load the file data\raw\raw-2.parquet
+2025-08-08 12:58:21,608 [INFO] app.loading.parquet_loader - started loading file data\raw\raw-2.parquet
+2025-08-08 12:58:21,681 [INFO] app.loading.parquet_loader - file data\raw\raw-2.parquet schema loaded to duckdb
+2025-08-08 12:58:21,726 [DEBUG] app.core.processing - self.schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None 
+    sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 12:58:21,730 [INFO] app.core.processing - initialising validors
+2025-08-08 12:58:21,731 [DEBUG] app.core.processing - self.context.config['validator_classes']=['app.validators.schema_validator.SchemaValidator', 'app.validators.schema_validator.ColumnValidator']
+2025-08-08 12:58:21,759 [DEBUG] app.validators.schema_validator - {'sensor_id': 'string', 'timestamp': 'ISO datetime', 'reading_type': 'string', 'value': 'float', 'battery_level': 'float'}
+2025-08-08 12:58:21,760 [INFO] app.validators.schema_validator - schema validation started
+2025-08-08 12:58:21,762 [INFO] app.validators.schema_validator - schema validation ended
+2025-08-08 12:58:21,773 [DEBUG] app.validators.schema_validator - current_schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None
+2025-08-08 12:58:21,774 [INFO] app.validators.schema_validator - column validation started
+2025-08-08 12:58:21,775 [INFO] app.validators.schema_validator - column validation ended
+2025-08-08 12:58:21,775 [INFO] app.core.processing - validators classes inititalised and run all validation
+2025-08-08 12:58:21,776 [DEBUG] app.core.processing - list_validator_classes_list=[True, True]
+2025-08-08 12:58:21,776 [INFO] app.core.processing - ingestion classes are initialising and loading
+2025-08-08 12:58:21,808 [INFO] app.ingestion_metrics.ingestion_data - runiing inngestion metrics
+2025-08-08 12:58:21,811 [DEBUG] app.ingestion_metrics.ingestion_data - stats={'total_rows': 30, 'missing_sensor_id': 0, 'missing_value': 0}
+2025-08-08 12:58:21,833 [DEBUG] app.ingestion_metrics.ingestion_data - Ingestion log data:
+        file_name               ingest_ts  total_rows  missing_sensor_id  missing_value  duplicate_rows
+0   output.duckdb 2025-07-27 18:37:54.979          30                  0              0               0
+1   output.duckdb 2025-07-27 18:48:07.575          30                  0              0               0
+2   output.duckdb 2025-07-27 19:08:16.130          30                  0              0               0
+3   output.duckdb 2025-07-27 19:08:34.552          30                  0              0               0
+4   output.duckdb 2025-07-27 19:09:08.041          30                  0              0               0
+..            ...                     ...         ...                ...            ...             ...
+73  output.duckdb 2025-07-27 23:43:55.416          30                  0              0               0
+74  output.duckdb 2025-07-27 23:44:08.949          30                  0              0               0
+75  output.duckdb 2025-07-27 23:44:30.703          30                  0              0               0
+76  output.duckdb 2025-07-27 23:49:33.395          30                  0              0               0
+77  output.duckdb 2025-08-08 12:58:21.817          30                  0              0               0
+
+[78 rows x 6 columns]
+2025-08-08 12:58:21,835 [INFO] app.ingestion_metrics.ingestion_data - Ingestion metric completed
+2025-08-08 12:58:21,855 [INFO] app.core.processing - ingestion classes are loaded and run completely
+2025-08-08 12:58:21,855 [INFO] app.core.processing - loading and inititialising trasnformation classes
+2025-08-08 12:58:21,865 [DEBUG] app.data_trasnformation.cleaners.drop_duplicate - df=   sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 12:58:21,939 [DEBUG] app.core.processing -    sensor_id                        timestamp reading_type  value  battery_level    zscore  calibrated_value  anomalous_reading
+0   sensor_5 2025-06-05 19:18:48.068905+05:30     humidity  28.20          77.90  0.559607          -54.9900               True
+1   sensor_2 2025-06-05 19:13:48.068905+05:30     humidity  15.73          48.88 -1.368100          -30.6735               True
+2   sensor_4 2025-06-05 18:48:48.068905+05:30     humidity  27.91          53.23  0.514776          -54.4245               True
+3   sensor_3 2025-06-05 18:43:48.068905+05:30     humidity  33.29          43.47  1.346457          -64.9155               True
+4   sensor_1 2025-06-05 18:23:48.068905+05:30     humidity  30.86          52.54  0.970810          -60.1770               True
+5   sensor_1 2025-06-05 18:13:48.068905+05:30     humidity  29.27          25.34  0.725016          -57.0765               True
+6   sensor_5 2025-06-05 18:08:48.068905+05:30     humidity  30.39          61.16  0.898154          -59.2605               True
+7   sensor_4 2025-06-05 18:03:48.068905+05:30     humidity  14.69          77.96 -1.528871          -28.6455               True
+8   sensor_2 2025-06-05 17:58:48.068905+05:30     humidity  21.02          85.21 -0.550332          -40.9890               True
+9   sensor_3 2025-06-05 17:38:48.068905+05:30     humidity  25.59          53.11  0.156133          -49.9005               True
+10  sensor_5 2025-06-05 17:33:48.068905+05:30     humidity  26.42          75.20  0.284441          -51.5190               True
+11  sensor_2 2025-06-05 17:28:48.068905+05:30     humidity  24.05          39.85 -0.081931          -46.8975               True
+12  sensor_1 2025-06-05 17:08:48.068905+05:30     humidity  12.12          40.98 -1.926161          -23.6340               True
+13  sensor_1 2025-06-05 19:08:48.068905+05:30  temperature  25.85          62.65  0.564992            0.5850              False
+14  sensor_5 2025-06-05 19:03:48.068905+05:30  temperature  24.68          53.57  0.380192            0.4680              False
+15  sensor_5 2025-06-05 18:58:48.068905+05:30  temperature  24.60          29.22  0.367556            0.4600              False
+16  sensor_4 2025-06-05 18:53:48.068905+05:30  temperature  26.41          26.97  0.653443            0.6410              False
+17  sensor_5 2025-06-05 18:38:48.068905+05:30  temperature  11.24          54.02 -1.742638           -0.8760              False
+18  sensor_5 2025-06-05 18:33:48.068905+05:30  temperature  13.34          83.95 -1.410946           -0.6660              False
+19  sensor_2 2025-06-05 18:28:48.068905+05:30  temperature  15.31          94.81 -1.099787           -0.4690              False
+20  sensor_5 2025-06-05 18:18:48.068905+05:30  temperature  27.23          27.00  0.782961            0.7230              False
+21  sensor_4 2025-06-05 17:53:48.068905+05:30  temperature  17.36          82.70 -0.775992           -0.2640              False
+22  sensor_2 2025-06-05 17:48:48.068905+05:30  temperature  32.49          29.62  1.613771            1.2490              False
+23  sensor_5 2025-06-05 17:43:48.068905+05:30  temperature  13.01          93.70 -1.463069           -0.6990              False
+24  sensor_4 2025-06-05 17:23:48.068905+05:30  temperature  27.54          73.98  0.831925            0.7540              False
+25  sensor_5 2025-06-05 17:18:48.068905+05:30  temperature  18.70          74.42 -0.564341           -0.1300              False
+26  sensor_1 2025-06-05 17:13:48.068905+05:30  temperature  25.75          98.73  0.549197            0.5750              False
+27  sensor_4 2025-06-05 17:03:48.068905+05:30  temperature  22.25          44.47 -0.003624            0.2250              False
+28  sensor_2 2025-06-05 16:58:48.068905+05:30  temperature  20.78          66.20 -0.235808            0.0780              False
+29  sensor_4 2025-06-05 16:53:48.068905+05:30  temperature  32.10          80.55  1.552171            1.2100              False
+2025-08-08 12:58:21,942 [INFO] app.core.processing - loaded and transformed transformation classes
+2025-08-08 12:58:21,942 [INFO] app.core.processing - running derived classes
+2025-08-08 12:58:21,958 [INFO] derived_fields - derived data for data\raw\raw-2.parquet = 
+            sensor_id reading_type  daily_avg_value  rolling_7d_avg
+date                                                              
+2025-06-05  sensor_1     humidity        24.083333       24.083333
+2025-06-05  sensor_1  temperature        25.800000       25.800000
+2025-06-05  sensor_2     humidity        20.266667       20.266667
+2025-06-05  sensor_2  temperature        22.860000       22.860000
+2025-06-05  sensor_3     humidity        29.440000       29.440000
+2025-06-05  sensor_4     humidity        21.300000       21.300000
+2025-06-05  sensor_4  temperature        25.132000       25.132000
+2025-06-05  sensor_5     humidity        28.336667       28.336667
+2025-06-05  sensor_5  temperature        18.971429       18.971429
+2025-08-08 12:58:21,959 [INFO] app.core.processing - completed derived classes
+2025-08-08 12:58:21,987 [INFO] app.core.processing - saving data with partition
+2025-08-08 13:01:17,296 [INFO] app.core.processing - loading started
+2025-08-08 13:01:17,297 [INFO] app.loading.parquet_loader - checking can we load the file data\raw\raw-2.parquet
+2025-08-08 13:01:17,297 [INFO] app.loading.parquet_loader - started loading file data\raw\raw-2.parquet
+2025-08-08 13:01:17,320 [INFO] app.loading.parquet_loader - file data\raw\raw-2.parquet schema loaded to duckdb
+2025-08-08 13:01:17,346 [DEBUG] app.core.processing - self.schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None 
+    sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 13:01:17,349 [INFO] app.core.processing - initialising validors
+2025-08-08 13:01:17,349 [DEBUG] app.core.processing - self.context.config['validator_classes']=['app.validators.schema_validator.SchemaValidator', 'app.validators.schema_validator.ColumnValidator']
+2025-08-08 13:01:17,351 [DEBUG] app.validators.schema_validator - {'sensor_id': 'string', 'timestamp': 'ISO datetime', 'reading_type': 'string', 'value': 'float', 'battery_level': 'float'}
+2025-08-08 13:01:17,351 [INFO] app.validators.schema_validator - schema validation started
+2025-08-08 13:01:17,352 [INFO] app.validators.schema_validator - schema validation ended
+2025-08-08 13:01:17,361 [DEBUG] app.validators.schema_validator - current_schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None
+2025-08-08 13:01:17,362 [INFO] app.validators.schema_validator - column validation started
+2025-08-08 13:01:17,363 [INFO] app.validators.schema_validator - column validation ended
+2025-08-08 13:01:17,363 [INFO] app.core.processing - validators classes inititalised and run all validation
+2025-08-08 13:01:17,363 [DEBUG] app.core.processing - list_validator_classes_list=[True, True]
+2025-08-08 13:01:17,364 [INFO] app.core.processing - ingestion classes are initialising and loading
+2025-08-08 13:01:17,411 [INFO] app.ingestion_metrics.ingestion_data - runiing inngestion metrics
+2025-08-08 13:01:17,414 [DEBUG] app.ingestion_metrics.ingestion_data - stats={'total_rows': 30, 'missing_sensor_id': 0, 'missing_value': 0}
+2025-08-08 13:01:17,433 [DEBUG] app.ingestion_metrics.ingestion_data - Ingestion log data:
+        file_name               ingest_ts  total_rows  missing_sensor_id  missing_value  duplicate_rows
+0   output.duckdb 2025-07-27 18:37:54.979          30                  0              0               0
+1   output.duckdb 2025-07-27 18:48:07.575          30                  0              0               0
+2   output.duckdb 2025-07-27 19:08:16.130          30                  0              0               0
+3   output.duckdb 2025-07-27 19:08:34.552          30                  0              0               0
+4   output.duckdb 2025-07-27 19:09:08.041          30                  0              0               0
+..            ...                     ...         ...                ...            ...             ...
+74  output.duckdb 2025-07-27 23:44:08.949          30                  0              0               0
+75  output.duckdb 2025-07-27 23:44:30.703          30                  0              0               0
+76  output.duckdb 2025-07-27 23:49:33.395          30                  0              0               0
+77  output.duckdb 2025-08-08 12:58:21.817          30                  0              0               0
+78  output.duckdb 2025-08-08 13:01:17.419          30                  0              0               0
+
+[79 rows x 6 columns]
+2025-08-08 13:01:17,434 [INFO] app.ingestion_metrics.ingestion_data - Ingestion metric completed
+2025-08-08 13:01:17,446 [INFO] app.core.processing - ingestion classes are loaded and run completely
+2025-08-08 13:01:17,447 [INFO] app.core.processing - loading and inititialising trasnformation classes
+2025-08-08 13:01:17,456 [DEBUG] app.data_trasnformation.cleaners.drop_duplicate - df=   sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 13:01:17,500 [DEBUG] app.core.processing -    sensor_id                        timestamp reading_type  value  battery_level    zscore  calibrated_value  anomalous_reading
+0   sensor_5 2025-06-05 19:18:48.068905+05:30     humidity  28.20          77.90  0.559607          -54.9900               True
+1   sensor_2 2025-06-05 19:13:48.068905+05:30     humidity  15.73          48.88 -1.368100          -30.6735               True
+2   sensor_4 2025-06-05 18:48:48.068905+05:30     humidity  27.91          53.23  0.514776          -54.4245               True
+3   sensor_3 2025-06-05 18:43:48.068905+05:30     humidity  33.29          43.47  1.346457          -64.9155               True
+4   sensor_1 2025-06-05 18:23:48.068905+05:30     humidity  30.86          52.54  0.970810          -60.1770               True
+5   sensor_1 2025-06-05 18:13:48.068905+05:30     humidity  29.27          25.34  0.725016          -57.0765               True
+6   sensor_5 2025-06-05 18:08:48.068905+05:30     humidity  30.39          61.16  0.898154          -59.2605               True
+7   sensor_4 2025-06-05 18:03:48.068905+05:30     humidity  14.69          77.96 -1.528871          -28.6455               True
+8   sensor_2 2025-06-05 17:58:48.068905+05:30     humidity  21.02          85.21 -0.550332          -40.9890               True
+9   sensor_3 2025-06-05 17:38:48.068905+05:30     humidity  25.59          53.11  0.156133          -49.9005               True
+10  sensor_5 2025-06-05 17:33:48.068905+05:30     humidity  26.42          75.20  0.284441          -51.5190               True
+11  sensor_2 2025-06-05 17:28:48.068905+05:30     humidity  24.05          39.85 -0.081931          -46.8975               True
+12  sensor_1 2025-06-05 17:08:48.068905+05:30     humidity  12.12          40.98 -1.926161          -23.6340               True
+13  sensor_1 2025-06-05 19:08:48.068905+05:30  temperature  25.85          62.65  0.564992            0.5850              False
+14  sensor_5 2025-06-05 19:03:48.068905+05:30  temperature  24.68          53.57  0.380192            0.4680              False
+15  sensor_5 2025-06-05 18:58:48.068905+05:30  temperature  24.60          29.22  0.367556            0.4600              False
+16  sensor_4 2025-06-05 18:53:48.068905+05:30  temperature  26.41          26.97  0.653443            0.6410              False
+17  sensor_5 2025-06-05 18:38:48.068905+05:30  temperature  11.24          54.02 -1.742638           -0.8760              False
+18  sensor_5 2025-06-05 18:33:48.068905+05:30  temperature  13.34          83.95 -1.410946           -0.6660              False
+19  sensor_2 2025-06-05 18:28:48.068905+05:30  temperature  15.31          94.81 -1.099787           -0.4690              False
+20  sensor_5 2025-06-05 18:18:48.068905+05:30  temperature  27.23          27.00  0.782961            0.7230              False
+21  sensor_4 2025-06-05 17:53:48.068905+05:30  temperature  17.36          82.70 -0.775992           -0.2640              False
+22  sensor_2 2025-06-05 17:48:48.068905+05:30  temperature  32.49          29.62  1.613771            1.2490              False
+23  sensor_5 2025-06-05 17:43:48.068905+05:30  temperature  13.01          93.70 -1.463069           -0.6990              False
+24  sensor_4 2025-06-05 17:23:48.068905+05:30  temperature  27.54          73.98  0.831925            0.7540              False
+25  sensor_5 2025-06-05 17:18:48.068905+05:30  temperature  18.70          74.42 -0.564341           -0.1300              False
+26  sensor_1 2025-06-05 17:13:48.068905+05:30  temperature  25.75          98.73  0.549197            0.5750              False
+27  sensor_4 2025-06-05 17:03:48.068905+05:30  temperature  22.25          44.47 -0.003624            0.2250              False
+28  sensor_2 2025-06-05 16:58:48.068905+05:30  temperature  20.78          66.20 -0.235808            0.0780              False
+29  sensor_4 2025-06-05 16:53:48.068905+05:30  temperature  32.10          80.55  1.552171            1.2100              False
+2025-08-08 13:01:17,503 [INFO] app.core.processing - loaded and transformed transformation classes
+2025-08-08 13:01:17,503 [INFO] app.core.processing - running derived classes
+2025-08-08 13:01:17,518 [INFO] derived_fields - derived data for data\raw\raw-2.parquet = 
+            sensor_id reading_type  daily_avg_value  rolling_7d_avg
+date                                                              
+2025-06-05  sensor_1     humidity        24.083333       24.083333
+2025-06-05  sensor_1  temperature        25.800000       25.800000
+2025-06-05  sensor_2     humidity        20.266667       20.266667
+2025-06-05  sensor_2  temperature        22.860000       22.860000
+2025-06-05  sensor_3     humidity        29.440000       29.440000
+2025-06-05  sensor_4     humidity        21.300000       21.300000
+2025-06-05  sensor_4  temperature        25.132000       25.132000
+2025-06-05  sensor_5     humidity        28.336667       28.336667
+2025-06-05  sensor_5  temperature        18.971429       18.971429
+2025-08-08 13:01:17,520 [INFO] app.core.processing - completed derived classes
+2025-08-08 13:01:17,546 [INFO] app.core.processing - saving data with partition
+2025-08-08 13:01:33,927 [INFO] app.core.processing - loading started
+2025-08-08 13:01:33,928 [INFO] app.loading.parquet_loader - checking can we load the file data\raw\raw-2.parquet
+2025-08-08 13:01:33,929 [INFO] app.loading.parquet_loader - started loading file data\raw\raw-2.parquet
+2025-08-08 13:01:33,962 [INFO] app.loading.parquet_loader - file data\raw\raw-2.parquet schema loaded to duckdb
+2025-08-08 13:01:33,981 [DEBUG] app.core.processing - self.schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None 
+    sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 13:01:33,984 [INFO] app.core.processing - initialising validors
+2025-08-08 13:01:33,984 [DEBUG] app.core.processing - self.context.config['validator_classes']=['app.validators.schema_validator.SchemaValidator', 'app.validators.schema_validator.ColumnValidator']
+2025-08-08 13:01:33,985 [DEBUG] app.validators.schema_validator - {'sensor_id': 'string', 'timestamp': 'ISO datetime', 'reading_type': 'string', 'value': 'float', 'battery_level': 'float'}
+2025-08-08 13:01:33,986 [INFO] app.validators.schema_validator - schema validation started
+2025-08-08 13:01:33,987 [INFO] app.validators.schema_validator - schema validation ended
+2025-08-08 13:01:33,993 [DEBUG] app.validators.schema_validator - current_schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None
+2025-08-08 13:01:33,994 [INFO] app.validators.schema_validator - column validation started
+2025-08-08 13:01:33,994 [INFO] app.validators.schema_validator - column validation ended
+2025-08-08 13:01:33,995 [INFO] app.core.processing - validators classes inititalised and run all validation
+2025-08-08 13:01:33,995 [DEBUG] app.core.processing - list_validator_classes_list=[True, True]
+2025-08-08 13:01:33,995 [INFO] app.core.processing - ingestion classes are initialising and loading
+2025-08-08 13:01:34,042 [INFO] app.ingestion_metrics.ingestion_data - runiing inngestion metrics
+2025-08-08 13:01:34,045 [DEBUG] app.ingestion_metrics.ingestion_data - stats={'total_rows': 30, 'missing_sensor_id': 0, 'missing_value': 0}
+2025-08-08 13:01:34,063 [DEBUG] app.ingestion_metrics.ingestion_data - Ingestion log data:
+        file_name               ingest_ts  total_rows  missing_sensor_id  missing_value  duplicate_rows
+0   output.duckdb 2025-07-27 18:37:54.979          30                  0              0               0
+1   output.duckdb 2025-07-27 18:48:07.575          30                  0              0               0
+2   output.duckdb 2025-07-27 19:08:16.130          30                  0              0               0
+3   output.duckdb 2025-07-27 19:08:34.552          30                  0              0               0
+4   output.duckdb 2025-07-27 19:09:08.041          30                  0              0               0
+..            ...                     ...         ...                ...            ...             ...
+75  output.duckdb 2025-07-27 23:44:30.703          30                  0              0               0
+76  output.duckdb 2025-07-27 23:49:33.395          30                  0              0               0
+77  output.duckdb 2025-08-08 12:58:21.817          30                  0              0               0
+78  output.duckdb 2025-08-08 13:01:17.419          30                  0              0               0
+79  output.duckdb 2025-08-08 13:01:34.050          30                  0              0               0
+
+[80 rows x 6 columns]
+2025-08-08 13:01:34,064 [INFO] app.ingestion_metrics.ingestion_data - Ingestion metric completed
+2025-08-08 13:01:34,078 [INFO] app.core.processing - ingestion classes are loaded and run completely
+2025-08-08 13:01:34,078 [INFO] app.core.processing - loading and inititialising trasnformation classes
+2025-08-08 13:01:34,088 [DEBUG] app.data_trasnformation.cleaners.drop_duplicate - df=   sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 13:01:34,126 [DEBUG] app.core.processing -    sensor_id                        timestamp reading_type  value  battery_level    zscore  calibrated_value  anomalous_reading
+0   sensor_5 2025-06-05 19:18:48.068905+05:30     humidity  28.20          77.90  0.559607          -54.9900               True
+1   sensor_2 2025-06-05 19:13:48.068905+05:30     humidity  15.73          48.88 -1.368100          -30.6735               True
+2   sensor_4 2025-06-05 18:48:48.068905+05:30     humidity  27.91          53.23  0.514776          -54.4245               True
+3   sensor_3 2025-06-05 18:43:48.068905+05:30     humidity  33.29          43.47  1.346457          -64.9155               True
+4   sensor_1 2025-06-05 18:23:48.068905+05:30     humidity  30.86          52.54  0.970810          -60.1770               True
+5   sensor_1 2025-06-05 18:13:48.068905+05:30     humidity  29.27          25.34  0.725016          -57.0765               True
+6   sensor_5 2025-06-05 18:08:48.068905+05:30     humidity  30.39          61.16  0.898154          -59.2605               True
+7   sensor_4 2025-06-05 18:03:48.068905+05:30     humidity  14.69          77.96 -1.528871          -28.6455               True
+8   sensor_2 2025-06-05 17:58:48.068905+05:30     humidity  21.02          85.21 -0.550332          -40.9890               True
+9   sensor_3 2025-06-05 17:38:48.068905+05:30     humidity  25.59          53.11  0.156133          -49.9005               True
+10  sensor_5 2025-06-05 17:33:48.068905+05:30     humidity  26.42          75.20  0.284441          -51.5190               True
+11  sensor_2 2025-06-05 17:28:48.068905+05:30     humidity  24.05          39.85 -0.081931          -46.8975               True
+12  sensor_1 2025-06-05 17:08:48.068905+05:30     humidity  12.12          40.98 -1.926161          -23.6340               True
+13  sensor_1 2025-06-05 19:08:48.068905+05:30  temperature  25.85          62.65  0.564992            0.5850              False
+14  sensor_5 2025-06-05 19:03:48.068905+05:30  temperature  24.68          53.57  0.380192            0.4680              False
+15  sensor_5 2025-06-05 18:58:48.068905+05:30  temperature  24.60          29.22  0.367556            0.4600              False
+16  sensor_4 2025-06-05 18:53:48.068905+05:30  temperature  26.41          26.97  0.653443            0.6410              False
+17  sensor_5 2025-06-05 18:38:48.068905+05:30  temperature  11.24          54.02 -1.742638           -0.8760              False
+18  sensor_5 2025-06-05 18:33:48.068905+05:30  temperature  13.34          83.95 -1.410946           -0.6660              False
+19  sensor_2 2025-06-05 18:28:48.068905+05:30  temperature  15.31          94.81 -1.099787           -0.4690              False
+20  sensor_5 2025-06-05 18:18:48.068905+05:30  temperature  27.23          27.00  0.782961            0.7230              False
+21  sensor_4 2025-06-05 17:53:48.068905+05:30  temperature  17.36          82.70 -0.775992           -0.2640              False
+22  sensor_2 2025-06-05 17:48:48.068905+05:30  temperature  32.49          29.62  1.613771            1.2490              False
+23  sensor_5 2025-06-05 17:43:48.068905+05:30  temperature  13.01          93.70 -1.463069           -0.6990              False
+24  sensor_4 2025-06-05 17:23:48.068905+05:30  temperature  27.54          73.98  0.831925            0.7540              False
+25  sensor_5 2025-06-05 17:18:48.068905+05:30  temperature  18.70          74.42 -0.564341           -0.1300              False
+26  sensor_1 2025-06-05 17:13:48.068905+05:30  temperature  25.75          98.73  0.549197            0.5750              False
+27  sensor_4 2025-06-05 17:03:48.068905+05:30  temperature  22.25          44.47 -0.003624            0.2250              False
+28  sensor_2 2025-06-05 16:58:48.068905+05:30  temperature  20.78          66.20 -0.235808            0.0780              False
+29  sensor_4 2025-06-05 16:53:48.068905+05:30  temperature  32.10          80.55  1.552171            1.2100              False
+2025-08-08 13:01:34,132 [INFO] app.core.processing - loaded and transformed transformation classes
+2025-08-08 13:01:34,133 [INFO] app.core.processing - running derived classes
+2025-08-08 13:01:34,164 [INFO] derived_fields - derived data for data\raw\raw-2.parquet = 
+            sensor_id reading_type  daily_avg_value  rolling_7d_avg
+date                                                              
+2025-06-05  sensor_1     humidity        24.083333       24.083333
+2025-06-05  sensor_1  temperature        25.800000       25.800000
+2025-06-05  sensor_2     humidity        20.266667       20.266667
+2025-06-05  sensor_2  temperature        22.860000       22.860000
+2025-06-05  sensor_3     humidity        29.440000       29.440000
+2025-06-05  sensor_4     humidity        21.300000       21.300000
+2025-06-05  sensor_4  temperature        25.132000       25.132000
+2025-06-05  sensor_5     humidity        28.336667       28.336667
+2025-06-05  sensor_5  temperature        18.971429       18.971429
+2025-08-08 13:01:34,166 [INFO] app.core.processing - completed derived classes
+2025-08-08 13:01:34,212 [INFO] app.core.processing - saving data with partition
+2025-08-08 13:01:41,324 [INFO] app.core.processing - loading started
+2025-08-08 13:01:41,325 [INFO] app.loading.parquet_loader - checking can we load the file data\raw\raw-2.parquet
+2025-08-08 13:01:41,326 [INFO] app.loading.parquet_loader - started loading file data\raw\raw-2.parquet
+2025-08-08 13:01:41,356 [INFO] app.loading.parquet_loader - file data\raw\raw-2.parquet schema loaded to duckdb
+2025-08-08 13:01:41,375 [DEBUG] app.core.processing - self.schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None 
+    sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 13:01:41,377 [INFO] app.core.processing - initialising validors
+2025-08-08 13:01:41,377 [DEBUG] app.core.processing - self.context.config['validator_classes']=['app.validators.schema_validator.SchemaValidator', 'app.validators.schema_validator.ColumnValidator']
+2025-08-08 13:01:41,379 [DEBUG] app.validators.schema_validator - {'sensor_id': 'string', 'timestamp': 'ISO datetime', 'reading_type': 'string', 'value': 'float', 'battery_level': 'float'}
+2025-08-08 13:01:41,379 [INFO] app.validators.schema_validator - schema validation started
+2025-08-08 13:01:41,380 [INFO] app.validators.schema_validator - schema validation ended
+2025-08-08 13:01:41,386 [DEBUG] app.validators.schema_validator - current_schema=     column_name   column_type null   key default extra
+0      sensor_id       VARCHAR  YES  None    None  None
+1      timestamp  TIMESTAMP_NS  YES  None    None  None
+2   reading_type       VARCHAR  YES  None    None  None
+3          value        DOUBLE  YES  None    None  None
+4  battery_level        DOUBLE  YES  None    None  None
+2025-08-08 13:01:41,386 [INFO] app.validators.schema_validator - column validation started
+2025-08-08 13:01:41,387 [INFO] app.validators.schema_validator - column validation ended
+2025-08-08 13:01:41,387 [INFO] app.core.processing - validators classes inititalised and run all validation
+2025-08-08 13:01:41,388 [DEBUG] app.core.processing - list_validator_classes_list=[True, True]
+2025-08-08 13:01:41,388 [INFO] app.core.processing - ingestion classes are initialising and loading
+2025-08-08 13:01:41,439 [INFO] app.ingestion_metrics.ingestion_data - runiing inngestion metrics
+2025-08-08 13:01:41,444 [DEBUG] app.ingestion_metrics.ingestion_data - stats={'total_rows': 30, 'missing_sensor_id': 0, 'missing_value': 0}
+2025-08-08 13:01:41,470 [DEBUG] app.ingestion_metrics.ingestion_data - Ingestion log data:
+        file_name               ingest_ts  total_rows  missing_sensor_id  missing_value  duplicate_rows
+0   output.duckdb 2025-07-27 18:37:54.979          30                  0              0               0
+1   output.duckdb 2025-07-27 18:48:07.575          30                  0              0               0
+2   output.duckdb 2025-07-27 19:08:16.130          30                  0              0               0
+3   output.duckdb 2025-07-27 19:08:34.552          30                  0              0               0
+4   output.duckdb 2025-07-27 19:09:08.041          30                  0              0               0
+..            ...                     ...         ...                ...            ...             ...
+76  output.duckdb 2025-07-27 23:49:33.395          30                  0              0               0
+77  output.duckdb 2025-08-08 12:58:21.817          30                  0              0               0
+78  output.duckdb 2025-08-08 13:01:17.419          30                  0              0               0
+79  output.duckdb 2025-08-08 13:01:34.050          30                  0              0               0
+80  output.duckdb 2025-08-08 13:01:41.453          30                  0              0               0
+
+[81 rows x 6 columns]
+2025-08-08 13:01:41,480 [INFO] app.ingestion_metrics.ingestion_data - Ingestion metric completed
+2025-08-08 13:01:41,497 [INFO] app.core.processing - ingestion classes are loaded and run completely
+2025-08-08 13:01:41,497 [INFO] app.core.processing - loading and inititialising trasnformation classes
+2025-08-08 13:01:41,510 [DEBUG] app.data_trasnformation.cleaners.drop_duplicate - df=   sensor_id                  timestamp reading_type  value  battery_level
+0   sensor_5 2025-06-05 13:48:48.068905     humidity  28.20          77.90
+1   sensor_2 2025-06-05 13:43:48.068905     humidity  15.73          48.88
+2   sensor_1 2025-06-05 13:38:48.068905  temperature  25.85          62.65
+3   sensor_5 2025-06-05 13:33:48.068905  temperature  24.68          53.57
+4   sensor_5 2025-06-05 13:28:48.068905  temperature  24.60          29.22
+5   sensor_4 2025-06-05 13:23:48.068905  temperature  26.41          26.97
+6   sensor_4 2025-06-05 13:18:48.068905     humidity  27.91          53.23
+7   sensor_3 2025-06-05 13:13:48.068905     humidity  33.29          43.47
+8   sensor_5 2025-06-05 13:08:48.068905  temperature  11.24          54.02
+9   sensor_5 2025-06-05 13:03:48.068905  temperature  13.34          83.95
+10  sensor_2 2025-06-05 12:58:48.068905  temperature  15.31          94.81
+11  sensor_1 2025-06-05 12:53:48.068905     humidity  30.86          52.54
+12  sensor_5 2025-06-05 12:48:48.068905  temperature  27.23          27.00
+13  sensor_1 2025-06-05 12:43:48.068905     humidity  29.27          25.34
+14  sensor_5 2025-06-05 12:38:48.068905     humidity  30.39          61.16
+15  sensor_4 2025-06-05 12:33:48.068905     humidity  14.69          77.96
+16  sensor_2 2025-06-05 12:28:48.068905     humidity  21.02          85.21
+17  sensor_4 2025-06-05 12:23:48.068905  temperature  17.36          82.70
+18  sensor_2 2025-06-05 12:18:48.068905  temperature  32.49          29.62
+19  sensor_5 2025-06-05 12:13:48.068905  temperature  13.01          93.70
+20  sensor_3 2025-06-05 12:08:48.068905     humidity  25.59          53.11
+21  sensor_5 2025-06-05 12:03:48.068905     humidity  26.42          75.20
+22  sensor_2 2025-06-05 11:58:48.068905     humidity  24.05          39.85
+23  sensor_4 2025-06-05 11:53:48.068905  temperature  27.54          73.98
+24  sensor_5 2025-06-05 11:48:48.068905  temperature  18.70          74.42
+25  sensor_1 2025-06-05 11:43:48.068905  temperature  25.75          98.73
+26  sensor_1 2025-06-05 11:38:48.068905     humidity  12.12          40.98
+27  sensor_4 2025-06-05 11:33:48.068905  temperature  22.25          44.47
+28  sensor_2 2025-06-05 11:28:48.068905  temperature  20.78          66.20
+29  sensor_4 2025-06-05 11:23:48.068905  temperature  32.10          80.55
+2025-08-08 13:01:41,546 [DEBUG] app.core.processing -    sensor_id                        timestamp reading_type  value  battery_level    zscore  calibrated_value  anomalous_reading
+0   sensor_5 2025-06-05 19:18:48.068905+05:30     humidity  28.20          77.90  0.559607          -54.9900               True
+1   sensor_2 2025-06-05 19:13:48.068905+05:30     humidity  15.73          48.88 -1.368100          -30.6735               True
+2   sensor_4 2025-06-05 18:48:48.068905+05:30     humidity  27.91          53.23  0.514776          -54.4245               True
+3   sensor_3 2025-06-05 18:43:48.068905+05:30     humidity  33.29          43.47  1.346457          -64.9155               True
+4   sensor_1 2025-06-05 18:23:48.068905+05:30     humidity  30.86          52.54  0.970810          -60.1770               True
+5   sensor_1 2025-06-05 18:13:48.068905+05:30     humidity  29.27          25.34  0.725016          -57.0765               True
+6   sensor_5 2025-06-05 18:08:48.068905+05:30     humidity  30.39          61.16  0.898154          -59.2605               True
+7   sensor_4 2025-06-05 18:03:48.068905+05:30     humidity  14.69          77.96 -1.528871          -28.6455               True
+8   sensor_2 2025-06-05 17:58:48.068905+05:30     humidity  21.02          85.21 -0.550332          -40.9890               True
+9   sensor_3 2025-06-05 17:38:48.068905+05:30     humidity  25.59          53.11  0.156133          -49.9005               True
+10  sensor_5 2025-06-05 17:33:48.068905+05:30     humidity  26.42          75.20  0.284441          -51.5190               True
+11  sensor_2 2025-06-05 17:28:48.068905+05:30     humidity  24.05          39.85 -0.081931          -46.8975               True
+12  sensor_1 2025-06-05 17:08:48.068905+05:30     humidity  12.12          40.98 -1.926161          -23.6340               True
+13  sensor_1 2025-06-05 19:08:48.068905+05:30  temperature  25.85          62.65  0.564992            0.5850              False
+14  sensor_5 2025-06-05 19:03:48.068905+05:30  temperature  24.68          53.57  0.380192            0.4680              False
+15  sensor_5 2025-06-05 18:58:48.068905+05:30  temperature  24.60          29.22  0.367556            0.4600              False
+16  sensor_4 2025-06-05 18:53:48.068905+05:30  temperature  26.41          26.97  0.653443            0.6410              False
+17  sensor_5 2025-06-05 18:38:48.068905+05:30  temperature  11.24          54.02 -1.742638           -0.8760              False
+18  sensor_5 2025-06-05 18:33:48.068905+05:30  temperature  13.34          83.95 -1.410946           -0.6660              False
+19  sensor_2 2025-06-05 18:28:48.068905+05:30  temperature  15.31          94.81 -1.099787           -0.4690              False
+20  sensor_5 2025-06-05 18:18:48.068905+05:30  temperature  27.23          27.00  0.782961            0.7230              False
+21  sensor_4 2025-06-05 17:53:48.068905+05:30  temperature  17.36          82.70 -0.775992           -0.2640              False
+22  sensor_2 2025-06-05 17:48:48.068905+05:30  temperature  32.49          29.62  1.613771            1.2490              False
+23  sensor_5 2025-06-05 17:43:48.068905+05:30  temperature  13.01          93.70 -1.463069           -0.6990              False
+24  sensor_4 2025-06-05 17:23:48.068905+05:30  temperature  27.54          73.98  0.831925            0.7540              False
+25  sensor_5 2025-06-05 17:18:48.068905+05:30  temperature  18.70          74.42 -0.564341           -0.1300              False
+26  sensor_1 2025-06-05 17:13:48.068905+05:30  temperature  25.75          98.73  0.549197            0.5750              False
+27  sensor_4 2025-06-05 17:03:48.068905+05:30  temperature  22.25          44.47 -0.003624            0.2250              False
+28  sensor_2 2025-06-05 16:58:48.068905+05:30  temperature  20.78          66.20 -0.235808            0.0780              False
+29  sensor_4 2025-06-05 16:53:48.068905+05:30  temperature  32.10          80.55  1.552171            1.2100              False
+2025-08-08 13:01:41,549 [INFO] app.core.processing - loaded and transformed transformation classes
+2025-08-08 13:01:41,550 [INFO] app.core.processing - running derived classes
+2025-08-08 13:01:41,565 [INFO] derived_fields - derived data for data\raw\raw-2.parquet = 
+            sensor_id reading_type  daily_avg_value  rolling_7d_avg
+date                                                              
+2025-06-05  sensor_1     humidity        24.083333       24.083333
+2025-06-05  sensor_1  temperature        25.800000       25.800000
+2025-06-05  sensor_2     humidity        20.266667       20.266667
+2025-06-05  sensor_2  temperature        22.860000       22.860000
+2025-06-05  sensor_3     humidity        29.440000       29.440000
+2025-06-05  sensor_4     humidity        21.300000       21.300000
+2025-06-05  sensor_4  temperature        25.132000       25.132000
+2025-06-05  sensor_5     humidity        28.336667       28.336667
+2025-06-05  sensor_5  temperature        18.971429       18.971429
+2025-08-08 13:01:41,566 [INFO] app.core.processing - completed derived classes
+2025-08-08 13:01:41,595 [INFO] app.core.processing - saving data with partition
